@@ -9,7 +9,7 @@ public class BerlinTimeUtilTest {
     @Test
     public void whenMidnightTimeProvidedReturnsBerlinMidnightTime(){
         String hourBuilder = "OOOO\n" + "OOOO";
-        String berlinHour = BerlinTimeUtil.getBerlinHour(0);
+        String berlinHour = BerlinTimeUtil.convertToBerlinHour(0);
         assertEquals(hourBuilder, berlinHour);
     }
 
@@ -18,7 +18,7 @@ public class BerlinTimeUtilTest {
         StringBuilder hourBuilder = new StringBuilder();
         hourBuilder.append("RRRR\n")
                 .append("RRRR");
-        String berlinHour = BerlinTimeUtil.getBerlinHour(24);
+        String berlinHour = BerlinTimeUtil.convertToBerlinHour(24);
         assertEquals(hourBuilder.toString(), berlinHour);
     }
 
@@ -27,7 +27,7 @@ public class BerlinTimeUtilTest {
         StringBuilder hourBuilder = new StringBuilder();
         hourBuilder.append("RROO\n")
                 .append("RRRO");
-        String berlinHour = BerlinTimeUtil.getBerlinHour(13);
+        String berlinHour = BerlinTimeUtil.convertToBerlinHour(13);
         assertEquals(hourBuilder.toString(), berlinHour);
     }
 
@@ -36,7 +36,7 @@ public class BerlinTimeUtilTest {
         StringBuilder hourBuilder = new StringBuilder();
         hourBuilder.append("YYROOOOOOOO\n")
                 .append("YYOO");
-        String berlinHour = BerlinTimeUtil.getBerlinMinute(17);
+        String berlinHour = BerlinTimeUtil.convertToBerlinMinute(17);
         assertEquals(hourBuilder.toString(), berlinHour);
     }
 

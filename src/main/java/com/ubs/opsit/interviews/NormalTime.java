@@ -1,6 +1,6 @@
 package com.ubs.opsit.interviews;
 
-public class NormalTime {
+public class NormalTime implements CustomTime{
     private int hour;
     private int min;
     private int sec;
@@ -11,27 +11,22 @@ public class NormalTime {
         this.sec = sec;
     }
 
-    public int getHour() {
+    @Override
+    public Integer getHour() {
         return hour;
     }
 
-    public void setHour(int hour) {
-        this.hour = hour;
-    }
-
-    public int getMin() {
+    @Override
+    public Integer getMin() {
         return min;
     }
 
-    public void setMin(int min) {
-        this.min = min;
-    }
-
-    public int getSec() {
+    @Override
+    public Integer getSec() {
         return sec;
     }
 
-    public void setSec(int sec) {
-        this.sec = sec;
+    public boolean isValidDate() {
+        return hour >= 0 && hour <= 24 && min >= 0 && min < 60 && sec >= 0 && sec < 60;
     }
 }

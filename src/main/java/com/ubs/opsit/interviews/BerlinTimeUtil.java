@@ -2,7 +2,7 @@ package com.ubs.opsit.interviews;
 
 public class BerlinTimeUtil {
 
-    public static String getBerlinHour(int hour) {
+    public static String convertToBerlinHour(int hour) {
         StringBuilder hourBuilder = new StringBuilder();
         buildHourRow(hourBuilder, hour / 5);
         nextLine(hourBuilder);
@@ -10,7 +10,7 @@ public class BerlinTimeUtil {
         return hourBuilder.toString();
     }
 
-    public static String getBerlinMinute(int minute) {
+    public static String convertToBerlinMinute(int minute) {
         StringBuilder minuteBuilder = new StringBuilder();
         buildMinuteFirstRow(minuteBuilder, minute / 5);
         nextLine(minuteBuilder);
